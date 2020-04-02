@@ -9,5 +9,7 @@ VALUES
 ('LG','HDD','Intell Pentium II 350Hz',60,512,'2000GB','63.5 cm(max)'),
 ('Acer','Solid State Drive (SSD)','Intel i5','4','64','30GB','SFF(small form factor)')"""
 
+query = """SELECT * FROM computers"""
+
 cursor.execute(query)
 connection.commit()
