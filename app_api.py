@@ -97,8 +97,8 @@ def delete_computer(id):
     computer = Computer.query.get(id)
     db.session.delete(computer)
     db.session.commit()
-    # result = computers_schema.dump(all_computers)
-    return computer_schema.jsonify(computer)
+    # result = computers_schema.dump(all_computers) #Uncomment this code if you opt to delete all the list of the computers you see.
+    return computer_schema.jsonify(computer) #thsi code is to delete just single column or item.
 
 if __name__ =='__main__':
     app.run(debug=True)
