@@ -1,5 +1,5 @@
 import flask
-import requests
+# import requests
 import flask_marshmallow
 from flask import request, jsonify
 from flask_marshmallow import Marshmallow
@@ -138,7 +138,7 @@ class Computer_api(Resource):
         Computers = [Computer for Computer in Computers if Computer["computer_name"] != name]
         return "<h1>404</h1><p>The resource could not be found.</p>", 404
 
-    @app.route('/api/v1/resources/Computers', methods=['GET'])
+    @app.route('/api/v1/resources/computer', methods=['GET'])
     def api_id():
     # Check if an ID was provided as part of the URL.
     # If ID is provided, assign it to a variable.
@@ -157,5 +157,5 @@ class Computer_api(Resource):
         return jsonify(results)
 
 app.run()
-api.add_resource(Computer_api, "/Computer/<string:name>")
+api.add_resource(Computer_api, "/computer/<string:name>")
 app.run(debug=True)

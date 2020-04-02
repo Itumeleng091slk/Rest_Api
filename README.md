@@ -23,3 +23,5 @@
     }
 ]
 """
+
+computingforgeeks.com/how-to-install-pgadmin-4-on-ubuntu/

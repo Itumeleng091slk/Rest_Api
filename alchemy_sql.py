@@ -11,7 +11,7 @@ Base = declarative_base()
 
 class Computer(Base):
 
-    __tablename__ = 'Computers'
+    __tablename__ = 'computers'
     id = Column(Integer, primary_key= True)
     name = Column(String)
     hard_drive = Column(VARCHAR)
@@ -35,5 +35,9 @@ class Computer(Base):
         session.commit()
 
 Computer1 = Computer("Dell","Dell 500GB 7,200 RPM SATA 2.5in Hard Drive","Intel Core i9 processor",8,8,"512GB","18.3 cm (7.2 in)")
+Computer2 = Computer("LG","HDD","Intell Pentium II 350Hz",60,512,"2000GB","63.5 cm(max)")
+Computer3 = Computer("Acer","Solid State Drive (SSD)","Intel i5",4,64,"30GB","SFF(small form factor)")
 session.add(Computer1)
+session.add(Computer2)
+session.add(Computer3)
 session.commit()
