@@ -2,7 +2,7 @@ from sqlalchemy import create_engine, Column, String,NUMERIC,VARCHAR,Integer
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-engine = create_engine('postgresql+psycopg2://user:pass@localhost/data_sql')
+engine = create_engine('postgresql+psycopg2://user:pass@localhost:5432/data_sql')
 engine.connect()
 Session = sessionmaker(bind=engine)
 session = Session()
@@ -13,7 +13,7 @@ class Computer(Base):
 
     __tablename__ = 'computers'
     id = Column(Integer, primary_key= True)
-    name = Column(String)
+    computer_name = Column(String)
     hard_drive = Column(VARCHAR)
     processor = Column(VARCHAR)
     ram_amount = Column(NUMERIC)
@@ -21,8 +21,8 @@ class Computer(Base):
     hard_drive_space = Column(String)
     form_factor = Column(VARCHAR)
 
-    def __init__(self, name, hard_drive, processor, ram_amount, maximum_ram, hard_drive_space, form_factor):
-        self.name = name
+    def __init__(self, computer_name, hard_drive, processor, ram_amount, maximum_ram, hard_drive_space, form_factor):
+        self.computer_name = computer_name
         self.hard_drive = hard_drive
         self.processor = processor
         self.ram_amount = ram_amount
