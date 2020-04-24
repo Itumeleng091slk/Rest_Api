@@ -89,16 +89,15 @@ def update_computer(id):
     computer.form_factor = form_factor
     
     db.session.commit()
-
     return computer_schema.jsonify(computer)
 
-@app.route('/computer/<id>', methods=['DELETE'])
+@app.route('/computer/<id>', methods=['DELETE']) # the <id> gives you the option of picking which item or computer you want to modify.
 def delete_computer(id):
     computer = Computer.query.get(id)
     db.session.delete(computer)
     db.session.commit()
-    # result = computers_schema.dump(all_computers) #Uncomment this code if you opt to delete all the list of the computers you see.
-    return computer_schema.jsonify(computer) #thsi code is to delete just single column or item.
+    # result = computers_schema.dump(all_computers) >>> Uncomment this code if you opt to delete all the list of the computers in your dictionary.
+    return computer_schema.jsonify(computer) 
 
 if __name__ =='__main__':
     app.run(debug=True)
