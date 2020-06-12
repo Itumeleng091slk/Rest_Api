@@ -1,8 +1,9 @@
 from sqlalchemy import create_engine, Column, String,NUMERIC,VARCHAR,Integer
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+from config import connect_to_engine
 
-engine = create_engine('postgresql+psycopg2://user:pass@localhost:5432/data_sql')
+engine = create_engine('connect_to_engine')
 engine.connect()
 Session = sessionmaker(bind=engine)
 session = Session()
