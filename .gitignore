@@ -2,3 +2,4 @@ gitignore/postgresql
 Pipfile.lock
 Pipfile
 __pycache__
+.vscode
