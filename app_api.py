@@ -32,7 +32,7 @@ class Computer(db.Model):
         self.hard_drive_space = hard_drive_space
         self.form_factor = form_factor
 
-class ComputerSchema(ma.Schema):
+class Computer_Schema(ma.Schema):
     class Meta:
         fields = ('id','computer_name','hard_drive', 'processor', 'ram_amount', 'maximum_ram', 'hard_drive_space', 'form_factor')
 
