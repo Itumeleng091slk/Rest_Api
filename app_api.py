@@ -1,11 +1,12 @@
+import os
 from flask import Flask, request, jsonify
 from flask_marshmallow import Marshmallow
 from flask_sqlalchemy import SQLAlchemy
 from marshmallow import Schema
-import os
+from config import os_path
 
 app = Flask(__name__)
-basedir = os.path.abspath(os.path.dirname(__file__))
+basedir = os_path
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///' + os.path.join(basedir, 'postgresql')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
