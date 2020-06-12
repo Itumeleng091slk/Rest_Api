@@ -1,4 +1,5 @@
 import psycopg2
+from config import connect_to_database
 
 connection = psycopg2.connect(connect_to_database)
 cursor = connection.cursor()
