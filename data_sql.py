@@ -1,6 +1,6 @@
 import psycopg2
 
-connection = psycopg2.connect(database="data_sql",user="user",password="pass", host="localhost",port=5432)
+connection = psycopg2.connect(connect_to_database)
 cursor = connection.cursor()
 
 query = """INSERT INTO Computers(computer_name,hard_drive,processor,ram_amount,maximum_ram,hard_drive_space,form_factor) 
